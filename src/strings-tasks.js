@@ -347,8 +347,7 @@ function containsSubstring(str, substring) {
  *   countVowels('XYZ') => 1
  */
 function countVowels(str) {
-  const vowels = /[aeiou]/gi;
-  const matches = str.match(vowels);
+  const matches = str.match(/[aeiou]/gi);
   return matches ? matches.length : 0;
 }
 
@@ -430,8 +429,11 @@ function invertCase(/* str */) {
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  const a = 'Hello, ';
+  const b = '!';
+  const c = ' ';
+  return `${a}${firstName}${c}${lastName}${b}`;
 }
 
 /**
