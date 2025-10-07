@@ -347,8 +347,14 @@ function containsSubstring(str, substring) {
  *   countVowels('XYZ') => 1
  */
 function countVowels(str) {
-  const matches = str.match(/[aeiou]/gi);
-  return matches ? matches.length : 0;
+  const vowels = 'aeiouAEIOU';
+  const foundVowels = [];
+  for (let i = 0; i < str.length; i += 1) {
+    if (vowels.includes(str[i])) {
+      foundVowels.push(str[i]);
+    }
+  }
+  return foundVowels.length;
 }
 
 /**
@@ -481,8 +487,12 @@ function unbracketTag(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  const words = str.split(/\s+/);
+  const emails = words.filter((word) => {
+    return word.includes('@') && word.includes('.');
+  });
+  return emails;
 }
 
 /**
