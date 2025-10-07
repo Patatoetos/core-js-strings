@@ -286,8 +286,13 @@ function formatTime(minutes, seconds) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  const a = str.length;
+  let x = '';
+  for (let i = 0; i < a; i += 1) {
+    x = `${x}${str[a - 1 - i]}`;
+  }
+  return x;
 }
 
 /**
